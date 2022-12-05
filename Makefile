@@ -1,16 +1,14 @@
-main: main.o profile.o network.o
-	g++ -o main main.o profile.o network.o
+main: main.o funcs.o
+	g++ -o main main.o funcs.o
 
-tests: tests.o profile.o network.o
-	g++ -o tests tests.o profile.o network.o
+tests: tests.o funcs.o
+	g++ -o tests tests.o funcs.o
 
-profile.o: profile.cpp profile.h
+funcs.o: funcs.cpp funcs.o
 
-network.o: network.cpp network.h
+main.o: main.cpp funcs.h
 
-main.o: main.cpp profile.h network.h
-
-tests.o: tests.cpp doctest.h profile.h network.h
+tests.o: tests.cpp doctest.h funcs.h
 
 clean:
-	rm -f main.o tests.o profile.o network.o
+	rm -f main.o tests.o funcs.o
