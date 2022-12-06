@@ -24,3 +24,13 @@ TEST_CASE("Task B: goodVibes()") {
     CHECK(goodVibes(v2) == v2_fixed);
     CHECK(goodVibes(v3) == v3_fixed);
 }
+
+TEST_CASE("Task C: gogeta()") {
+    std::vector<int> v0;
+    std::vector<int> v1{-1, 2, 3, -4, 5, 6};
+    std::vector<int> v2{0, -10, -123, 2348932, 2384, 23894};
+    std::vector<int> v1_and_2{-1, 2, 3, -4, 5, 6, 0, -10, -123, 2348932, 2384, 23894};
+    gogeta(v1, v2);
+    CHECK(v1 == v1_and_2);
+    CHECK(v2 == v0);
+}

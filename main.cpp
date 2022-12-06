@@ -19,5 +19,13 @@ int main() {
     }
     std::cout << "}" << std::endl;
 
+    std::cout << "\n--------------TASK C--------------\n" << " gogeta(taskA, taskB) : { ";
+    std::vector<int> taskC = taskA;
+    gogeta(taskC, taskB_new);
+    for (int i = 0; i < taskC.size(); i++) {
+        std::cout << taskC.at(i) << " ";
+    }
+    std::cout << "}" << std::endl;
+
     return 0;
 }
