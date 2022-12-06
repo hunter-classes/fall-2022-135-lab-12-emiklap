@@ -30,3 +30,25 @@ void gogeta(std::vector<int> &goku, std::vector<int> &vegeta) {
     vegeta.clear();
     return;
 }
+
+//task D
+std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2) {
+    int smaller = 2; //by default, we assume v2 <= v1
+    std::vector<int> ret_vector;
+    if (v1.size() < v2.size()) { smaller = 1; } //changes value if v1 < v2
+
+    if (smaller == 1) {
+        for (int i = 0; i < v2.size(); i++) {
+            int num = v2.at(i);
+            if (i < v1.size()) { num += v1.at(i); }
+            ret_vector.push_back(num);
+        }
+    } else {
+        for (int i = 0; i < v1.size(); i++) {
+            int num = v1.at(i);
+            if (i < v2.size()) { num += v2.at(i); }
+            ret_vector.push_back(num);
+        }
+    }
+    return ret_vector;
+}

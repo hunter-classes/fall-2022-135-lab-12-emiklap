@@ -34,3 +34,17 @@ TEST_CASE("Task C: gogeta()") {
     CHECK(v1 == v1_and_2);
     CHECK(v2 == v0);
 }
+
+TEST_CASE("Task D: sumPairWise()") {
+    std::vector<int> v1{-1, 2, 3, -4, 5, 6};
+    std::vector<int> v2{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    std::vector<int> v3{10, 20, 30, 40};
+    std::vector<int> v4{1, 2, 3, 4};
+    std::vector<int> v1_and_2{0, 4, 6, 0, 10, 12, 7, 8, 9};
+    std::vector<int> v2_and_3{11, 22, 33, 44, 5, 6, 7, 8, 9};
+    std::vector<int> v3_and_4{11, 22, 33, 44};
+
+    CHECK(sumPairWise(v1, v2) == v1_and_2);
+    CHECK(sumPairWise(v2, v3) == v2_and_3);
+    CHECK(sumPairWise(v3, v4) == v3_and_4);
+}
